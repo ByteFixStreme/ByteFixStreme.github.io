@@ -6,7 +6,6 @@
     <title>ByteFix Streme - Servicios Tecnológicos</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        /* Fallback icons using emojis */
         .fa-certificate::before { content: "🏆"; }
         .fa-microchip::before { content: "💻"; }
         .fa-cogs::before { content: "⚙️"; }
@@ -49,8 +48,6 @@
         .orbitron {
             font-family: 'Orbitron', monospace;
         }
-        
-        /* Animated Background */
         .cyber-bg {
             position: fixed;
             top: 0;
@@ -79,8 +76,6 @@
             0% { transform: translate(0, 0); }
             100% { transform: translate(50px, 50px); }
         }
-        
-        /* Header Styles */
         .hero-header {
             padding: 2rem 0;
             text-align: center;
@@ -112,7 +107,6 @@
             letter-spacing: 2px;
         }
         
-        /* Service Cards */
         .services-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -218,8 +212,7 @@
             color: var(--secondary-color);
             margin-bottom: 1.5rem;
         }
-        
-        /* Buttons */
+  
         .btn {
             display: inline-block;
             padding: 0.8rem 2rem;
@@ -274,8 +267,6 @@
             color: var(--text-gray);
             font-size: 0.9rem;
         }
-        
-        /* Responsive */
         @media (max-width: 768px) {
             .logo-text {
                 font-size: 2rem;
@@ -289,8 +280,6 @@
                 grid-template-columns: 1fr;
             }
         }
-        
-        /* Loading Animation */
         .pulse {
             animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
         }
@@ -308,18 +297,15 @@
 <body>
     <div class="cyber-bg"></div>
     <div class="cyber-grid"></div>
-    
-    <!-- Header -->
+
     <header class="hero-header">
         <h1 class="logo-text orbitron">ByteFix Streme</h1>
         <p class="tagline">Soluciones Tecnológicas de Vanguardia</p>
     </header>
-    
-    <!-- Main Content -->
+
     <main class="services-container">
         <h2 class="section-title orbitron">Nuestros Servicios</h2>
-        
-        <!-- Licencias de Software -->
+    
         <section class="service-category">
             <h3 class="category-title">
                 <i class="fas fa-certificate category-icon"></i>
@@ -357,8 +343,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Servicios de Hardware -->
+   
         <section class="service-category">
             <h3 class="category-title">
                 <i class="fas fa-microchip category-icon"></i>
@@ -396,8 +381,7 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Otros Servicios -->
+   
         <section class="service-category">
             <h3 class="category-title">
                 <i class="fas fa-cogs category-icon"></i>
@@ -445,9 +429,9 @@
     </footer>
     
     <script>
-        // Add some interactive animations
+
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate service cards on scroll
+
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -461,16 +445,14 @@
                     }
                 });
             }, observerOptions);
-            
-            // Initially hide cards
+      
             document.querySelectorAll('.service-card').forEach(card => {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(30px)';
                 card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(card);
             });
-            
-            // Add hover effect to buttons
+  
             document.querySelectorAll('.btn').forEach(button => {
                 button.addEventListener('mouseenter', function() {
                     this.style.transform = 'translateY(-2px) scale(1.05)';
@@ -480,8 +462,7 @@
                     this.style.transform = 'translateY(0) scale(1)';
                 });
             });
-            
-            // Dynamic background particles effect
+       
             function createParticle() {
                 const particle = document.createElement('div');
                 particle.style.position = 'fixed';
@@ -523,8 +504,7 @@
                     easing: 'ease-out'
                 }).onfinish = () => particle.remove();
             }
-            
-            // Create particles periodically
+
             setInterval(createParticle, 500);
         });
     </script>
